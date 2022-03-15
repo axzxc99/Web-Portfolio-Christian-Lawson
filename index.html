@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Christian Lawson Web Portfolio</title>
+        <script src="imgRes.js" type="text/javascript" charset="utf-8"></script>
+        <script src="code.js" type="text/javascript" charset="utf-8"></script>        
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="headerDiv">
+            <h1 class="title">Christian Lawson's Web Portfolio</h1>
+            <center class="controlDiv" id="controlDiv">
+                <select class="siteSelect" onchange='loadSite(this.selectedOptions[0].value)' name="siteSelect" id="siteSelect">
+                    <option value="resume">Resume</option>
+                </select>
+                <input type="button" class="openBtn" disabled id="openBtn" value="Open" onclick="if (currentSite != 'home') {window.open(currentSite,'_blank')}">
+            </center>
+            <input id="hideHeader" style="display:none" class="hideHeader" type="button" value="▲" onclick = "toggleHeader()">
+        </div>
+        <div id="homeDiv" class="homeDiv">
+            <iframe onload="this.style['opacity'] = 1" id="siteFrame" class="siteFrame" style="opacity:1" src="./Christian-Lawson-Resume.html"></iframe>
+            <p id="siteInfo" class="siteInfo"><span class='siteTitle'>Resume</span>Above is a selection of projects I've made that include languages such as HTML, Javascript, PHP, CSS, Node.js, and even Python.</p>
+        </div>
+        <script>load()</script>
+    </body>
+</html>
