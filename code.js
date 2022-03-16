@@ -1,9 +1,9 @@
 var sites = [
-    ["https://web.editey.com/0B85Phnw-Z0B1Si0tT1hBNTZkd28/index.html","Startup Page","Simple Startpage with a tasklist and modifiable search function. One of the first websites I've made. It's currently being hosted on 'www.editey.com'.",["HTML","CSS","JS"]],
-    ["https://encasednews.online","EncasedNews","A multi-sourced news tool divided long the US political spectrum. It's currently being hosted on 'www.hostinger.com'",["HTML","CSS","JS","PHP"]],
-    ["http://73.31.219.22/control","Space Shooters","Although incomplete, this website is a proof of concept for dynamically created server sessions to synchronize a computer and a phone to work as a game console and remote control. To the left is a snapshot of the actual website. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Node.js","Linux","Node.js"]],
-    ["http://73.31.219.22/MTT","Image To Text(for memes)","This website is a rudimentary image to text processing tool and organizer. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Python","Linux"]],
-    ["http://73.31.219.22/synch","Synch","A cross-device media synchronizer that dynamically creates 'party' sessions for the groups of devices. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Linux"]]
+    ["https://web.editey.com/0B85Phnw-Z0B1Si0tT1hBNTZkd28/index.html","Startup Page","Simple Startpage with a tasklist and modifiable search function. One of the first websites I've made. It's currently being hosted on 'www.editey.com'.",["HTML","CSS","JS"],""],
+    ["https://encasednews.online","EncasedNews","A multi-sourced news tool divided long the US political spectrum. It's currently being hosted on 'www.hostinger.com'",["HTML","CSS","JS","PHP"],""],
+    ["http://73.31.219.22/control","Space Shooters","Although incomplete, this website is a proof of concept for dynamically created server sessions to synchronize a computer and a phone to work as a game console and remote control. To the left is a snapshot of the actual website. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Node.js","Linux","Node.js"],"ss.png"],
+    ["http://73.31.219.22/MTT","Image To Text(for memes)","This website is a rudimentary image to text processing tool and organizer. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Python","Linux"],"MTT.png"],
+    ["http://73.31.219.22/synch","Synch","A cross-device media synchronizer that dynamically creates 'party' sessions for the groups of devices. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Linux"],"synch.png"]
 ];
 var currentSite = "resume";
 var hHeight = 0;
@@ -25,7 +25,7 @@ function loadSite(site)
         sites.forEach(siteArr => {
             if (siteArr[0] == site)
             {
-                document.getElementById("siteFrame").src=imgArr[siteArr[1]];     
+                document.getElementById("siteFrame").src="res/"+siteArr[4];     
             }
         });
     }
