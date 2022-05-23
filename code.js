@@ -33,7 +33,7 @@ function loadSite(site)
     {
         document.getElementById("siteFrame").src="./Christian-Lawson-Resume.html";
         document.getElementById("openBtn").disabled = true;
-        document.getElementById("siteInfo").innerHTML = "<span class='siteTitle'>Resume</span>My namewhile I don't have much professional experience, above is a selection of projects I've made that include languages such as HTML, Javascript, PHP, CSS, Node.js, and even Python.";
+        document.getElementById("siteInfo").innerHTML = "<span class='siteTitle'>Resume</span>Above is a selection of projects I've made that include languages such as HTML, Javascript, PHP, CSS, Node.js, and even Python.";
         return;
     }
     sites.forEach(siteArr => {
