@@ -63,7 +63,7 @@ function loadSite(site)
 	});
 }
 
-function openPage(input)
+function openPage()
 {
 	if (currentSite == "resume")
 		document.getElementById("download").click();
