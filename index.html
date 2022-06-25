@@ -15,7 +15,7 @@
 				<select class="siteSelect" onchange='loadSite(this.selectedOptions[0].value)' name="siteSelect" id="siteSelect">
 					<option value="resume">Resume</option>
 				</select>
-				<input type="button" class="openBtn" disabled id="openBtn" value="Open" onclick="if (currentSite != 'home') {window.open(currentSite,'_blank')}">
+				<input type="button" class="openBtn" id="openBtn" value="Download" onclick="switchPage(this)">
 			</center>
 			<input id="hideHeader" style="display:none" class="hideHeader" type="button" value="▲" onclick = "toggleHeader()">
 		</div>
@@ -23,6 +23,7 @@
 			<iframe onload="this.style['opacity'] = 1" id="siteFrame" class="siteFrame" style="opacity:1" src="./Christian-Lawson-Resume.html"></iframe>
 			<p id="siteInfo" class="siteInfo"><span class='siteTitle'>Resume</span>Above is a selection of projects I've made that include languages such as HTML, Javascript, PHP, CSS, Node.js, and even Python.</p>
 		</div>
+		<a id="download" download href="./Christian-Lawson.pdf"></a>
 		<script>load()</script>
 	</body>
 </html>

@@ -30,6 +30,11 @@ body
 	font-family: monospace;
 }
 
+#download
+{
+	display:none
+}
+
 #headerDiv
 {
 	height: fit-content;

@@ -1,9 +1,9 @@
 var sites = [
-    ["https://web.editey.com/0B85Phnw-Z0B1Si0tT1hBNTZkd28/index.html","Startup Page","Simple Startpage with a tasklist and modifiable search function. One of the first websites I've made. It's currently being hosted on 'www.editey.com'.",["HTML","CSS","JS"],""],
-    ["https://encasednews.online","EncasedNews","A multi-sourced news tool divided long the US political spectrum. It's currently being hosted on 'www.hostinger.com'",["HTML","CSS","JS","PHP"],""],
-    ["http://73.147.164.208/portfolio/control","Space Shooters","Although incomplete, this website is a proof of concept for dynamically created server sessions to synchronize a computer and a phone to work as a game console and remote control. To the left is a snapshot of the actual website. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Node.js","Linux","Node.js"],"ss.png"],
-    ["http://73.147.164.208/portfolio/MTT","Image To Text(for memes)","This website is a rudimentary image to text processing tool and organizer. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Python","Linux"],"MTT.png"],
-    ["http://73.147.164.208/portfolio/synch","Synch","A cross-device media synchronizer that dynamically creates 'party' sessions for the groups of devices. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Linux"],"synch.png"],
+	["https://web.editey.com/0B85Phnw-Z0B1Si0tT1hBNTZkd28/index.html","Startup Page","Simple Startpage with a tasklist and modifiable search function. One of the first websites I've made. It's currently being hosted on 'www.editey.com'.",["HTML","CSS","JS"],""],
+	["https://encasednews.online","EncasedNews","A multi-sourced news tool divided long the US political spectrum. It's currently being hosted on 'www.hostinger.com'",["HTML","CSS","JS","PHP"],""],
+	["http://73.147.164.208/portfolio/control","Space Shooters","Although incomplete, this website is a proof of concept for dynamically created server sessions to synchronize a computer and a phone to work as a game console and remote control. To the left is a snapshot of the actual website. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Node.js","Linux","Node.js"],"ss.png"],
+	["http://73.147.164.208/portfolio/MTT","Image To Text(for memes)","This website is a rudimentary image to text processing tool and organizer. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Python","Linux"],"MTT.png"],
+	["http://73.147.164.208/portfolio/synch","Synch","A cross-device media synchronizer that dynamically creates 'party' sessions for the groups of devices. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Linux"],"synch.png"],
 	["http://73.147.164.208/portfolio/stocky","Stocky","A quick information sharing website that creates dynamic sessions of up to five devices that can chat, share a clipboard and share some files in between each other. The website is hosted on a password protected private server and thus: <span class='cred'><br><b>User:</b> guest<br><b>Pass:</b> jbw90pja2q<br></span>",["HTML","CSS","JS","PHP","Node.js"],"stocky.png"]
 ];
 var currentSite = "resume";
@@ -15,89 +15,98 @@ function mobileCheck() {
 }
 function loadSite(site)
 {
-    currentSite = site;
-    document.getElementById("siteInfo").innerHTML = "";
-    document.getElementById("siteFrame").style["opacity"] = "0";
-    document.getElementById("openBtn").disabled = false;
-    if (site.includes("https://"))
-        document.getElementById("siteFrame").src=site;
-    else if (site.includes("http://"))
-    {
-        sites.forEach(siteArr => {
-            if (siteArr[0] == site)
-            {
-                document.getElementById("siteFrame").src="res/"+siteArr[4];     
-            }
-        });
-    }
-    else if (site == "resume")
-    {
-        document.getElementById("siteFrame").src="./Christian-Lawson-Resume.html";
-        document.getElementById("openBtn").disabled = true;
-        document.getElementById("siteInfo").innerHTML = "<span class='siteTitle'>Resume</span>Above is a selection of projects I've made that include languages such as HTML, Javascript, PHP, CSS, Node.js, and even Python.";
-        return;
-    }
-    sites.forEach(siteArr => {
-        if (siteArr[0] == site)
-        {
-            var title = document.createElement("span");
-            title.setAttribute("class",(mobileCheck()) ? "siteTitleMobile":"siteTitle");
-            title.setAttribute("id","siteTitle");
-            title.innerHTML = siteArr[1];
-            document.getElementById("siteInfo").appendChild(title);
-            var desc = document.createElement("span");
-            desc.setAttribute("class","siteDesc");
-            desc.innerHTML = siteArr[2];
-            document.getElementById("siteInfo").appendChild(desc);
-            var languages = document.createElement("ul");
-            var label = document.createElement("span");
-            label.innerHTML = "Included Languages:";
-            languages.appendChild(label);
-            languages.setAttribute("class","languages");
-            siteArr[3].forEach(lang =>{
-                var tempLi = document.createElement("li");
-                tempLi.innerHTML = lang;
-                languages.appendChild(tempLi);
-            });
-            document.getElementById("siteInfo").appendChild(languages);
-        }
-    });
+	currentSite = site;
+	document.getElementById("siteInfo").innerHTML = "";
+	document.getElementById("siteFrame").style["opacity"] = "0";
+	document.getElementById("openBtn").disabled = false;
+	if (site.includes("https://"))
+		document.getElementById("siteFrame").src=site;
+	else if (site.includes("http://"))
+	{
+		sites.forEach(siteArr => {
+			if (siteArr[0] == site)
+			{
+				document.getElementById("siteFrame").src="res/"+siteArr[4];	 
+			}
+		});
+	}
+	else if (site == "resume")
+	{
+		document.getElementById("siteFrame").src="./Christian-Lawson-Resume.html";
+		document.getElementById("openBtn").disabled = true;
+		document.getElementById("siteInfo").innerHTML = "<span class='siteTitle'>Resume</span>Above is a selection of projects I've made that include languages such as HTML, Javascript, PHP, CSS, Node.js, and even Python.";
+		return;
+	}
+	sites.forEach(siteArr => {
+		if (siteArr[0] == site)
+		{
+			var title = document.createElement("span");
+			title.setAttribute("class",(mobileCheck()) ? "siteTitleMobile":"siteTitle");
+			title.setAttribute("id","siteTitle");
+			title.innerHTML = siteArr[1];
+			document.getElementById("siteInfo").appendChild(title);
+			var desc = document.createElement("span");
+			desc.setAttribute("class","siteDesc");
+			desc.innerHTML = siteArr[2];
+			document.getElementById("siteInfo").appendChild(desc);
+			var languages = document.createElement("ul");
+			var label = document.createElement("span");
+			label.innerHTML = "Included Languages:";
+			languages.appendChild(label);
+			languages.setAttribute("class","languages");
+			siteArr[3].forEach(lang =>{
+				var tempLi = document.createElement("li");
+				tempLi.innerHTML = lang;
+				languages.appendChild(tempLi);
+			});
+			document.getElementById("siteInfo").appendChild(languages);
+		}
+	});
 }
+
+function switchPage(input)
+{
+	window.open(currentSite,'_blank');
+	document.getElementById("openBtn").value = ((currentSite == "resume") ? "Open":"Download");
+	if (currentSite == "resume")
+		document.getElementById("download").click();
+}
+
 function toggleHeader()
 {
-    if (document.getElementById("hideHeader").value == "▲")
-    {
-        document.getElementById("hideHeader").value = "▼";
-        document.getElementById("hideHeader").style["top"] = 0+"px";
-        document.getElementById("headerDiv").style["top"] = "-"+hHeight+"px";
-    }
-    else
-    {
-        document.getElementById("hideHeader").value = "▲";
-        document.getElementById("hideHeader").style["top"] = hHeight+"px";
-        document.getElementById("headerDiv").style["top"] = 0+"px";
-    }
+	if (document.getElementById("hideHeader").value == "▲")
+	{
+		document.getElementById("hideHeader").value = "▼";
+		document.getElementById("hideHeader").style["top"] = 0+"px";
+		document.getElementById("headerDiv").style["top"] = "-"+hHeight+"px";
+	}
+	else
+	{
+		document.getElementById("hideHeader").value = "▲";
+		document.getElementById("hideHeader").style["top"] = hHeight+"px";
+		document.getElementById("headerDiv").style["top"] = 0+"px";
+	}
 }
 function load()
 {
-    if (mobileCheck())
-    {
-        var mobileIDs = ["siteFrame","siteInfo"];
-        mobileIDs.forEach(ID => {
-            document.getElementById(ID).setAttribute("class",ID+"Mobile");
-        });
-        document.getElementById("hideHeader").style["display"] = "inline";
-    }
-    var siteSelect = document.getElementById("siteSelect");
-    for (let i=0;i<sites.length;i++)
-    {
-        var tempOption = document.createElement("option");
-        tempOption.setAttribute("value",sites[i][0]);
-        //tempOption.setAttribute("onselect","loadSite(this.value)");
-        tempOption.innerHTML = sites[i][1];
-        siteSelect.appendChild(tempOption);
-    }
-    hHeight = document.getElementById("headerDiv").offsetHeight;
-    document.getElementById("homeDiv").style["height"] = "calc(100vh - "+hHeight+"px)";
-    document.getElementById("hideHeader").style["top"] = hHeight+"px";
+	if (mobileCheck())
+	{
+		var mobileIDs = ["siteFrame","siteInfo"];
+		mobileIDs.forEach(ID => {
+			document.getElementById(ID).setAttribute("class",ID+"Mobile");
+		});
+		document.getElementById("hideHeader").style["display"] = "inline";
+	}
+	var siteSelect = document.getElementById("siteSelect");
+	for (let i=0;i<sites.length;i++)
+	{
+		var tempOption = document.createElement("option");
+		tempOption.setAttribute("value",sites[i][0]);
+		//tempOption.setAttribute("onselect","loadSite(this.value)");
+		tempOption.innerHTML = sites[i][1];
+		siteSelect.appendChild(tempOption);
+	}
+	hHeight = document.getElementById("headerDiv").offsetHeight;
+	document.getElementById("homeDiv").style["height"] = "calc(100vh - "+hHeight+"px)";
+	document.getElementById("hideHeader").style["top"] = hHeight+"px";
 }
