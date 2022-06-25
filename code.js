@@ -18,7 +18,7 @@ function loadSite(site)
 	currentSite = site;
 	document.getElementById("siteInfo").innerHTML = "";
 	document.getElementById("siteFrame").style["opacity"] = "0";
-	document.getElementById("openBtn").disabled = false;
+	document.getElementById("openBtn").value = ((currentSite == "resume") ? "Open":"Download");
 	if (site.includes("https://"))
 		document.getElementById("siteFrame").src=site;
 	else if (site.includes("http://"))
@@ -33,7 +33,6 @@ function loadSite(site)
 	else if (site == "resume")
 	{
 		document.getElementById("siteFrame").src="./Christian-Lawson-Resume.html";
-		document.getElementById("openBtn").disabled = true;
 		document.getElementById("siteInfo").innerHTML = "<span class='siteTitle'>Resume</span>Above is a selection of projects I've made that include languages such as HTML, Javascript, PHP, CSS, Node.js, and even Python.";
 		return;
 	}
@@ -64,12 +63,12 @@ function loadSite(site)
 	});
 }
 
-function switchPage(input)
+function openPage(input)
 {
-	window.open(currentSite,'_blank');
-	document.getElementById("openBtn").value = ((currentSite == "resume") ? "Open":"Download");
 	if (currentSite == "resume")
 		document.getElementById("download").click();
+	else
+		window.open(currentSite,'_blank');
 }
 
 function toggleHeader()
