@@ -18,7 +18,7 @@ function loadSite(site)
 	currentSite = site;
 	document.getElementById("siteInfo").innerHTML = "";
 	document.getElementById("siteFrame").style["opacity"] = "0";
-	document.getElementById("openBtn").value = ((currentSite == "resume") ? "Open":"Download");
+	document.getElementById("openBtn").value = ((currentSite != "resume") ? "Open":"Download");
 	if (site.includes("https://"))
 		document.getElementById("siteFrame").src=site;
 	else if (site.includes("http://"))
