@@ -32,7 +32,7 @@ function loadSite(site)
 	}
 	else if (site == "resume")
 	{
-		document.getElementById("siteFrame").src="./Christian-Lawson-Resume.html";
+		document.getElementById("siteFrame").src="./Christian-Lawson.pdf";
 		document.getElementById("siteInfo").innerHTML = "<span class='siteTitle'>Resume</span>Above is a selection of projects I've made that include languages such as HTML, Javascript, PHP, CSS, Node.js, and even Python.";
 		return;
 	}
