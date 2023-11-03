@@ -19,6 +19,7 @@ function loadSite(site)
 	document.getElementById("siteInfo").innerHTML = "";
 	document.getElementById("siteFrame").style["opacity"] = "0";
 	document.getElementById("openBtn").value = ((currentSite != "resume") ? "Open":"Download");
+	document.getElementById("openBtn").disabled = false;
 	if (site.includes("https://"))
 		document.getElementById("siteFrame").src=site;
 	else if (site.includes("http://"))
@@ -26,8 +27,10 @@ function loadSite(site)
 		sites.forEach(siteArr => {
 			if (siteArr[0] == site)
 			{
-				document.getElementById("siteFrame").src="res/"+siteArr[4];	 
+				document.getElementById("siteFrame").src="res/"+siteArr[4];	
+				document.getElementById("openBtn").disabled = true;
 			}
+			
 		});
 	}
 	else if (site == "resume")
